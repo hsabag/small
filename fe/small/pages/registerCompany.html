@@ -1,0 +1,18 @@
+<form novalidate>
+    Name:<br>
+    <input type="text" ng-model="company.name" ngRequired="true"><br>
+    Description:<br>
+    <input type="text" ng-model="company.description"><br>
+	Manager First Name:<br>
+    <input type="text" ng-model="company.manager.firstName" ngRequired="true"><br>
+	Manager Last Name:<br>
+    <input type="text" ng-model="company.manager.lastName" ngRequired="true"><br>
+	Manager Phone number:<br>
+    <input type="text" ng-model="company.manager.phone" ngRequired="true" ngPattern="/^\d+$/"><br>
+	Manager Email:<br>
+    <input type="text" ng-model="company.manager.email" ngRequired="true"><br>
+	Manager Password:<br>
+    <input type="text" ng-model="company.manager.password" ngRequired="true"><br>
+	<br>
+    <button ng-click="alert()">Register</button>
+  </form>

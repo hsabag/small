@@ -1,0 +1,10 @@
+<form novalidate>
+	<a href="./#/registerComp">Register New Company</a><br>
+    Name:<br>
+    <input type="text" ng-model="name" ngRequired="true"><br>
+	<br>
+    <button ng-click="search()">Search</button>
+	<div class="company-details">
+      Company: {{company}}   <br>
+    </div>
+  </form>
