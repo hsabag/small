@@ -1,10 +1,13 @@
 var smallBisServices = angular.module('F1FeederApp.services', ['ngResource']);
 
 
-smallBisServices.factory('registerCompanyAPI', ['$resource',
+smallBisServices.factory('companyAPI', ['$resource',
   function($resource, $scope){
     return $resource('http://localhost:8080/company', {}, {
-	  register: {method:'POST'}
+	  register: {method:'POST'},
+	  fetch: {method:'GET',url:'http://localhost:8080/company/:name'},
+	  list: {method:'GET', url:'http://localhost:8080/companies', isArray:true},
+	  delete: {method:'DELETE',url:'http://localhost:8080/company/:name'}
     });
   }]);
   
@@ -15,9 +18,9 @@ smallBisServices.factory('registerCompanyAPI', ['$resource',
     });
   }]);
   
-  smallBisServices.factory('listCompanyController', ['$resource',
+  smallBisServices.factory('listCompanyAPI', ['$resource',
   function($resource, $scope){
-    return $resource('http://localhost:8080/company/:name', {}, {
+    return $resource('http://localhost:8080/companies', {}, {
 	  fetch: {method:'GET'}
     });
   }]);

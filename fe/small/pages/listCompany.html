@@ -1,4 +1,5 @@
-<input type="text" ng-model="nameFilter" placeholder="Search..."/>
+  <a href="./#/regComp">Register New Company</a><br>
+  <input type="text" ng-model="nameFilter" placeholder="Search..."/>
   <table>
     <thead>
       <tr><th colspan="4">Registered Companies</th></tr>
@@ -8,6 +9,9 @@
         <td>{{$index + 1}}</td>
         <td>
           {{company}}
+        </td>
+		<td>
+          <button ng-click="delete('{{company.name}}')">Delete</button>
         </td>
       </tr>
     </tbody>
